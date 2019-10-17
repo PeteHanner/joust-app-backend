@@ -92,3 +92,85 @@ Migrating to RemoveDefModFromArmors (20191017142309)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3311046642746224830)[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (2.8ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.617518"], ["updated_at", "2019-10-17 18:50:30.617518"], ["img", "img.com/imgsrc"]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.8ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.636722"], ["updated_at", "2019-10-17 18:50:30.636722"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.644273"], ["updated_at", "2019-10-17 18:50:30.644273"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.649439"], ["updated_at", "2019-10-17 18:50:30.649439"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.653286"], ["updated_at", "2019-10-17 18:50:30.653286"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.3ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.657178"], ["updated_at", "2019-10-17 18:50:30.657178"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.660994"], ["updated_at", "2019-10-17 18:50:30.660994"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.3ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.665300"], ["updated_at", "2019-10-17 18:50:30.665300"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:50:30.669062"], ["updated_at", "2019-10-17 18:50:30.669062"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (1.9ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.685100"], ["updated_at", "2019-10-17 18:50:30.685100"], ["img", "img.com/imgsrc"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.695625"], ["updated_at", "2019-10-17 18:50:30.695625"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.3ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.700019"], ["updated_at", "2019-10-17 18:50:30.700019"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.7ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.704054"], ["updated_at", "2019-10-17 18:50:30.704054"], ["img", "img.com/imgsrc"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (1.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.716865"], ["updated_at", "2019-10-17 18:50:30.716865"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.726131"], ["updated_at", "2019-10-17 18:50:30.726131"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.731393"], ["updated_at", "2019-10-17 18:50:30.731393"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.6ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.737149"], ["updated_at", "2019-10-17 18:50:30.737149"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:50:30.742741"], ["updated_at", "2019-10-17 18:50:30.742741"], ["img", "img.com/imgsrc"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (1.8ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Peyton"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.776162"], ["updated_at", "2019-10-17 18:50:30.776162"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Marisa"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.786902"], ["updated_at", "2019-10-17 18:50:30.786902"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "German"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.792107"], ["updated_at", "2019-10-17 18:50:30.792107"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pete"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.797058"], ["updated_at", "2019-10-17 18:50:30.797058"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.7ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Carlos"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.801459"], ["updated_at", "2019-10-17 18:50:30.801459"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.6ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Victor"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.807741"], ["updated_at", "2019-10-17 18:50:30.807741"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rob"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.815795"], ["updated_at", "2019-10-17 18:50:30.815795"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.9ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JC"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.820636"], ["updated_at", "2019-10-17 18:50:30.820636"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Shannon"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.827320"], ["updated_at", "2019-10-17 18:50:30.827320"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
