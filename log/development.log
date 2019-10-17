@@ -174,3 +174,239 @@ Migrating to RemoveDefModFromArmors (20191017142309)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Shannon"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:50:30.827320"], ["updated_at", "2019-10-17 18:50:30.827320"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3311046642746224830)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddImgToWeapons (20191017141136)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "weapons" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141136"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToArmors (20191017141150)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "armors" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141150"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToHorses (20191017141158)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "horses" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141158"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveDefModFromArmors (20191017142309)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "armors" DROP COLUMN "def_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017142309"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3311046642746224830)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (1.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.781646"], ["updated_at", "2019-10-17 18:52:09.781646"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.786981"], ["updated_at", "2019-10-17 18:52:09.786981"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.790684"], ["updated_at", "2019-10-17 18:52:09.790684"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.794321"], ["updated_at", "2019-10-17 18:52:09.794321"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.797944"], ["updated_at", "2019-10-17 18:52:09.797944"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.3ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.801430"], ["updated_at", "2019-10-17 18:52:09.801430"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.804947"], ["updated_at", "2019-10-17 18:52:09.804947"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.808925"], ["updated_at", "2019-10-17 18:52:09.808925"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "atk_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 20], ["atk_mod", 60], ["def_mod", -20], ["created_at", "2019-10-17 18:52:09.812832"], ["updated_at", "2019-10-17 18:52:09.812832"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (1.8ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.833909"], ["updated_at", "2019-10-17 18:52:09.833909"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.6ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.842109"], ["updated_at", "2019-10-17 18:52:09.842109"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (1.1ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.848377"], ["updated_at", "2019-10-17 18:52:09.848377"], ["img", "img.com/imgsrc"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.6ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.858578"], ["updated_at", "2019-10-17 18:52:09.858578"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.6ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.864721"], ["updated_at", "2019-10-17 18:52:09.864721"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.870525"], ["updated_at", "2019-10-17 18:52:09.870525"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.6ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.875967"], ["updated_at", "2019-10-17 18:52:09.875967"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.880610"], ["updated_at", "2019-10-17 18:52:09.880610"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 60], ["spd_mod", 0], ["created_at", "2019-10-17 18:52:09.884961"], ["updated_at", "2019-10-17 18:52:09.884961"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (1.2ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Peyton"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.904437"], ["updated_at", "2019-10-17 18:52:09.904437"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Marisa"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.910426"], ["updated_at", "2019-10-17 18:52:09.910426"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "German"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.914968"], ["updated_at", "2019-10-17 18:52:09.914968"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pete"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.918984"], ["updated_at", "2019-10-17 18:52:09.918984"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.9ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Carlos"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.923424"], ["updated_at", "2019-10-17 18:52:09.923424"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.6ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Victor"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.937285"], ["updated_at", "2019-10-17 18:52:09.937285"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.6ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rob"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.944786"], ["updated_at", "2019-10-17 18:52:09.944786"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JC"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.952340"], ["updated_at", "2019-10-17 18:52:09.952340"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.7ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Shannon"], ["atk_mod", 0], ["spd_mod", 0], ["def_mod", 20], ["created_at", "2019-10-17 18:52:09.957474"], ["updated_at", "2019-10-17 18:52:09.957474"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-10-17 14:55:34 -0400
+  [1m[35m (11.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 25.3ms | Allocations: 481)
+Completed 200 OK in 39ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 2681)
+
+
+Started GET "/" for ::1 at 2019-10-17 14:55:38 -0400
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.2ms | Allocations: 196)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 773)
+
+
+Started GET "/" for ::1 at 2019-10-17 14:57:32 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.4ms | Allocations: 316)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 1643)
+
+
+Started GET "/" for ::1 at 2019-10-17 15:00:46 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Germanji/.rvm/gems/ruby-2.6.1/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.9ms | Allocations: 316)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 1643)
+
+
+Started GET "/horses" for ::1 at 2019-10-17 15:02:10 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for HorsesController):
+  
+actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/horses" for ::1 at 2019-10-17 15:02:24 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for HorsesController):
+  
+actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/horses" for ::1 at 2019-10-17 15:04:16 -0400
+Processing by HorsesController#index as */*
+  [1m[36mHorse Load (1.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 32ms (Views: 14.9ms | ActiveRecord: 13.7ms | Allocations: 7814)
+
+
