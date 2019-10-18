@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-weapons = Weapon.create(
+weapons = Weapon.find_or_create_by(
   [
     {
       name: 'Lance',
@@ -74,7 +74,7 @@ weapons = Weapon.create(
   ]
 )
 
-armors = Armor.create(
+armors = Armor.find_or_create_by(
   [
     {
       name: 'Chain Mail',
@@ -133,7 +133,7 @@ armors = Armor.create(
   ]
 )
 
-horses = Horse.create(
+horses = Horse.find_or_create_by(
   [
     {
       name: 'Peyton',
