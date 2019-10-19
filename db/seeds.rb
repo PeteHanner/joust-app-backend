@@ -6,13 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-weapons = Weapon.find_or_create_by(
+weapons = Weapon.create(
   [
+    # attack modifier: chance to land a hit on your opponent
+    # base damage: if you get a hit, how much HP it removes (before modifiers)
+    # speed modifier: modifies base damage up or down based on how fast you can go
+    # defense modifier: certain weapons can help or hinder defensive jousting
     {
       # great damage, good defense, quite heavy
       name: 'Lance',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
@@ -20,8 +24,8 @@ weapons = Weapon.find_or_create_by(
     {
       # weak damage,
       name: 'Shortsword',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
@@ -29,56 +33,56 @@ weapons = Weapon.find_or_create_by(
     {
       # good d
       name: 'Claymore',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Spear',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Mace',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Flail',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Battle Axe',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Warhammer',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Poleaxe',
+      atk_mod: 0,
       base_dmg: 20,
-      atk_mod: x,
       spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
@@ -86,7 +90,9 @@ weapons = Weapon.find_or_create_by(
   ]
 )
 
-armors = Armor.find_or_create_by(
+armors = Armor.create(
+  # base defense: how much protection this armor offers (before modifiers)
+  # speed modifier: going faster or slower can increase/decrease your damage dealt
   [
     {
       name: 'Chain Mail',
@@ -145,7 +151,10 @@ armors = Armor.find_or_create_by(
   ]
 )
 
-horses = Horse.find_or_create_by(
+horses = Horse.create(
+  # attack modifier: is this horse suited for offensive jousting
+  # defense modifier: is this horse suited for defensive jousting
+  # speed modifier: how fast can this horse go
   [
     {
       name: 'Peyton',
