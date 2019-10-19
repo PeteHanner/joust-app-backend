@@ -9,65 +9,77 @@
 weapons = Weapon.find_or_create_by(
   [
     {
+      # great damage, good defense, quite heavy
       name: 'Lance',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
+      # weak damage,
       name: 'Shortsword',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
-      name: 'Broadsword',
+      # good d
+      name: 'Claymore',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Spear',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Mace',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Flail',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Battle Axe',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Warhammer',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     },
     {
       name: 'Poleaxe',
       base_dmg: 20,
-      atk_mod: 60,
+      atk_mod: x,
+      spd_mod: 60,
       def_mod: -20,
       img: 'img.com/imgsrc'
     }

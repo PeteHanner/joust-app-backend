@@ -2261,3 +2261,71 @@ Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 7.9ms | Allocations: 4647
 Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 2217)
 
 
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3311046642746224830)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameAtkModToSpdMod (20191019134728)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.2ms)[0m  [1m[35mALTER TABLE "weapons" RENAME COLUMN "atk_mod" TO "spd_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019134728"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3311046642746224830)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3311046642746224830)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAtkModToWeapons (20191019135225)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (46.5ms)[0m  [1m[35mALTER TABLE "weapons" ADD "atk_mod" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019135225"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3311046642746224830)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/horses" for ::1 at 2019-10-19 09:54:31 -0400
+Started GET "/weapons" for ::1 at 2019-10-19 09:54:31 -0400
+Started GET "/armors" for ::1 at 2019-10-19 09:54:31 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (6.3ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 21ms (Views: 11.9ms | ActiveRecord: 6.3ms | Allocations: 8159)
+
+
+  [1m[36mWeapon Load (16.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mHorse Load (15.5ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 31ms (Views: 13.4ms | ActiveRecord: 16.8ms | Allocations: 15240)
+
+
+Completed 200 OK in 37ms (Views: 20.7ms | ActiveRecord: 15.5ms | Allocations: 19703)
+
+
+Started GET "/armors" for ::1 at 2019-10-19 09:55:14 -0400
+Started GET "/weapons" for ::1 at 2019-10-19 09:55:14 -0400
+Started GET "/horses" for ::1 at 2019-10-19 09:55:14 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (2.9ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mWeapon Load (3.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Processing by ArmorsController#index as */*
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mArmor Load (0.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 24ms (Views: 11.1ms | ActiveRecord: 11.4ms | Allocations: 13126)
+
+
+Completed 200 OK in 34ms (Views: 10.3ms | ActiveRecord: 22.5ms | Allocations: 18125)
+
+
+Completed 200 OK in 83ms (Views: 15.9ms | ActiveRecord: 66.2ms | Allocations: 20439)
+
+
