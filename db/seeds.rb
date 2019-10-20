@@ -174,73 +174,73 @@ horses = Horse.create(
     {
       # defensive - neutral 2nd
       name: 'Peyton',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: -3,
+      def_mod: 15,
+      spd_mod: 1.15,
       img: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681'
     },
     {
       # attacking - speed 2nd
       name: 'Marisa',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: 14,
+      def_mod: 3,
+      spd_mod: 1.2,
       img: 'https://cdn.globetrotting.com.au/wp-content/uploads/20190205110841/Curly_reddit-1024x827.jpg'
     },
     {
       # defensive - speed 2nd
       name: 'German',
       atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      def_mod: 16,
+      spd_mod: 1.25,
       img: 'https://www.horsebreedspictures.com/wp-content/uploads/2018/06/Horse-Mustang.jpg'
     },
     {
       # attacking - defense 2nd
       name: 'Pete',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: 14,
+      def_mod: 7,
+      spd_mod: 1.1,
       img: 'https://c8.alamy.com/comp/X6BT0G/close-up-of-a-horse-wearing-sunglasses-and-baring-its-teeth-X6BT0G.jpg'
     },
     {
       # speedy - attack 2nd
       name: 'Carlos',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: 12,
+      def_mod: 4,
+      spd_mod: 1.33,
       img: 'https://www.b4blaze.in/wp-content/uploads/2016/07/980x-7-1.jpg'
     },
     {
       # speedy - neutral 2nd
       name: 'Victor',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: 4,
+      def_mod: 2,
+      spd_mod: 1.35,
       img: 'https://i.pinimg.com/originals/e2/c9/34/e2c93450f1d2d814c8e289f1f9c58531.jpg'
     },
     {
       # speedy - defense 2nd
       name: 'Rob',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: -2,
+      def_mod: 16,
+      spd_mod: 1.3,
       img: 'https://i.pinimg.com/originals/76/96/f4/7696f4a677f79bf6cdf130d007122c96.jpg'
     },
     {
       # attacking - neutral 2nd
       name: 'JC',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: 12,
+      def_mod: 5,
+      spd_mod: 1,
       img: 'https://thecooleststuffever.com/sites/default/files/styles/product_main/public/horse_head_squirrel_feeder_0.jpg?itok=Yg3PH_4p'
     },
     {
       # defensive - attack 2nd
       name: 'Shannon',
-      atk_mod: 0,
-      def_mod: 0,
-      spd_mod: 0,
+      atk_mod: 8,
+      def_mod: 10,
+      spd_mod: 1.1,
       img: 'http://gentlecarouseltherapyhorses.com/wp-content/uploads/2016/10/therapy-horse-misty-read-book-gentle-carousel-hero-horses-646x716.jpg'
     }
   ]
