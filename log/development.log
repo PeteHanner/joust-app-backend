@@ -2638,3 +2638,96 @@ Completed 200 OK in 43ms (Views: 17.2ms | ActiveRecord: 24.8ms | Allocations: 27
 Completed 200 OK in 29ms (Views: 4.1ms | ActiveRecord: 23.2ms | Allocations: 3540)
 
 
+Started GET "/weapons" for ::1 at 2019-10-19 10:18:58 -0400
+Started GET "/armors" for ::1 at 2019-10-19 10:18:58 -0400
+Started GET "/horses" for ::1 at 2019-10-19 10:18:58 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (2.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mWeapon Load (1.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 2.0ms | Allocations: 3805)
+
+
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 1.3ms | Allocations: 4558)
+
+
+  [1m[36mArmor Load (15.5ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 4.2ms | ActiveRecord: 15.5ms | Allocations: 6626)
+
+
+Started GET "/armors" for ::1 at 2019-10-19 18:11:39 -0400
+Started GET "/horses" for ::1 at 2019-10-19 18:11:39 -0400
+Started GET "/weapons" for ::1 at 2019-10-19 18:11:39 -0400
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (12.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[35m (13.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (17.2ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mArmor Load (8.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (7.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 49ms (Views: 11.3ms | ActiveRecord: 36.1ms | Allocations: 9752)
+
+
+Completed 200 OK in 55ms (Views: 12.1ms | ActiveRecord: 42.0ms | Allocations: 15792)
+
+
+Completed 200 OK in 78ms (Views: 16.7ms | ActiveRecord: 59.1ms | Allocations: 23568)
+
+
+Started GET "/weapons" for ::1 at 2019-10-20 12:25:24 -0400
+Started GET "/armors" for ::1 at 2019-10-20 12:25:24 -0400
+Started GET "/horses" for ::1 at 2019-10-20 12:25:24 -0400
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[35m (13.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (10.4ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mWeapon Load (9.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mHorse Load (2.2ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 41ms (Views: 12.0ms | ActiveRecord: 27.9ms | Allocations: 12313)
+
+
+Completed 200 OK in 57ms (Views: 9.7ms | ActiveRecord: 44.7ms | Allocations: 23460)
+
+
+Completed 200 OK in 44ms (Views: 9.8ms | ActiveRecord: 27.9ms | Allocations: 16423)
+
+
+Started GET "/weapons" for ::1 at 2019-10-20 12:53:18 -0400
+Started GET "/armors" for ::1 at 2019-10-20 12:53:18 -0400
+Started GET "/horses" for ::1 at 2019-10-20 12:53:18 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[35m (18.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (3.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Processing by WeaponsController#index as */*
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (2.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (2.0ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 23ms (Views: 10.1ms | ActiveRecord: 10.8ms | Allocations: 12143)
+
+
+Completed 200 OK in 24ms (Views: 7.3ms | ActiveRecord: 15.4ms | Allocations: 15440)
+
+
+Completed 200 OK in 30ms (Views: 10.0ms | ActiveRecord: 18.6ms | Allocations: 20784)
+
+
