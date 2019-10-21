@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_135225) do
+ActiveRecord::Schema.define(version: 2019_10_21_153124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_10_19_135225) do
   create_table "armors", force: :cascade do |t|
     t.string "name"
     t.integer "base_def"
-    t.integer "spd_mod"
+    t.float "spd_mod"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_10_19_135225) do
   create_table "horses", force: :cascade do |t|
     t.string "name"
     t.integer "atk_mod"
-    t.integer "spd_mod"
+    t.float "spd_mod"
     t.integer "def_mod"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_10_19_135225) do
   create_table "weapons", force: :cascade do |t|
     t.string "name"
     t.integer "base_dmg"
-    t.integer "spd_mod"
+    t.float "spd_mod"
     t.integer "def_mod"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
