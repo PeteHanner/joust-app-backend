@@ -19,7 +19,7 @@ weapons = Weapon.create(
       base_dmg: 30,
       def_mod: 10,
       spd_mod: 0.7,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/OKlx5uf.png'
     },
     {
       # good hit rate, low damage, very quick, bad defense
@@ -28,7 +28,7 @@ weapons = Weapon.create(
       base_dmg: 10,
       def_mod: -10,
       spd_mod: 1.5,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/NTQcstw.png'
     },
     {
       # okay hit rate, good damage, good defense, somewhat heavy
@@ -37,7 +37,7 @@ weapons = Weapon.create(
       base_dmg: 22,
       def_mod: 10,
       spd_mod: 0.8,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/p2ro6Sw.png'
     },
     {
       # great hit rate, okay damage, bad defense, quite light
@@ -46,7 +46,7 @@ weapons = Weapon.create(
       base_dmg: 18,
       def_mod: -10,
       spd_mod: 1.2,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/CRRYwk4.png'
     },
     {
       # okay hit rate, good damage, poor defense, somewhat heavy
@@ -55,7 +55,7 @@ weapons = Weapon.create(
       base_dmg: 20,
       def_mod: -4,
       spd_mod: 0.9,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/eqnirOC.png'
     },
     {
       # bad hit rate, excellent damage, bad defense, neutral weight
@@ -64,7 +64,7 @@ weapons = Weapon.create(
       base_dmg: 29,
       def_mod: -12,
       spd_mod: 1,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/F6yjARG.png'
     },
     {
       # okay hit rate, huge damage, bad defense, very heavy
@@ -73,7 +73,7 @@ weapons = Weapon.create(
       base_dmg: 32,
       def_mod: -7,
       spd_mod: 0.65,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/fDsDhTr.png'
     },
     {
       # bad hit rate, extreme damage, terrible defense, extremely heavy
@@ -82,7 +82,7 @@ weapons = Weapon.create(
       base_dmg: 36,
       def_mod: -16,
       spd_mod: 0.58,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/FUZLUsG.png'
     },
     {
       # good hit rate, good damage, good defense, somewhat light
@@ -91,7 +91,7 @@ weapons = Weapon.create(
       base_dmg: 21,
       def_mod: 12,
       spd_mod: 1.1,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/1gCg1ks.png'
     }
   ]
 )
