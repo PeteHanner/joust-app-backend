@@ -105,63 +105,63 @@ armors = Armor.create(
       name: 'Chain Mail',
       base_def: 66,
       spd_mod: 1.1,
-      img: 'https://www.warhistoryonline.com/wp-content/uploads/2016/06/russian_mail_armor-536x640.jpg'
+      img: 'https://i.imgur.com/M413Juf.png'
     },
     {
       # excellent defense, extremely heavy, specialty against piercing
       name: 'Heavy Plate',
       base_def: 80,
       spd_mod: 0.64,
-      img: 'https://www.warhistoryonline.com/wp-content/uploads/2016/06/Italian_-_Sallet_-_Walters_51580-403x640.jpg'
+      img: 'https://i.imgur.com/nJzICGV.png'
     },
     {
       # very good defense, quite heavy, specialty against piercing
       name: 'Standard Plate',
       base_def: 76,
       spd_mod: 0.72,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/xtV4EKD.png'
     },
     {
       # below-average defense, fairly light, no advantages
       name: 'Boiled Leather',
       base_def: 60,
       spd_mod: 1.25,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/WOEycwY.png'
     },
     {
       # poor defense, very light, no specialties
       name: 'Quilted Padding',
       base_def: 53,
       spd_mod: 1.5,
-      img: 'https://live.staticflickr.com/3093/4559379622_825ce591f2_b.jpg'
+      img: 'https://i.imgur.com/EXwcIeZ.png'
     },
     {
       # above average defense, mildly heavy, specialty against slashing
       name: 'Scale Plate',
       base_def: 70,
       spd_mod: 0.90,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/uDLdB8B.png'
     },
     {
       # good defense, somewhat heavy, specialty against slashing
       name: 'Centurion Armor',
       base_def: 74,
       spd_mod: 0.84,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/XyGSwAU.png'
     },
     {
       # good defense, somewhat heavy, specialty against piercing
       name: 'Hoplite Armor',
       base_def: 76,
       spd_mod: 0.82,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/DnvJePj.png'
     },
     {
       # atrocious defense, extremely light, no specialties
       name: 'Loincloth',
       base_def: 25,
       spd_mod: 1.72,
-      img: 'img.com/imgsrc'
+      img: 'https://i.imgur.com/x6Lhoba.png'
     }
   ]
 )
@@ -177,7 +177,7 @@ horses = Horse.create(
       atk_mod: -3,
       def_mod: 15,
       spd_mod: 1.15,
-      img: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681'
+      img: 'https://i.imgur.com/I3iX8bX.png'
     },
     {
       # attacking - speed 2nd
@@ -185,7 +185,7 @@ horses = Horse.create(
       atk_mod: 13,
       def_mod: 3,
       spd_mod: 1.2,
-      img: 'https://cdn.globetrotting.com.au/wp-content/uploads/20190205110841/Curly_reddit-1024x827.jpg'
+      img: 'https://i.imgur.com/9g1TBLJ.png'
     },
     {
       # defensive - speed 2nd
@@ -193,7 +193,7 @@ horses = Horse.create(
       atk_mod: 2,
       def_mod: 13,
       spd_mod: 1.25,
-      img: 'https://www.horsebreedspictures.com/wp-content/uploads/2018/06/Horse-Mustang.jpg'
+      img: 'https://i.imgur.com/o6j42e6.png'
     },
     {
       # attacking - defense 2nd
@@ -201,7 +201,7 @@ horses = Horse.create(
       atk_mod: 14,
       def_mod: 7,
       spd_mod: 1.1,
-      img: 'https://c8.alamy.com/comp/X6BT0G/close-up-of-a-horse-wearing-sunglasses-and-baring-its-teeth-X6BT0G.jpg'
+      img: 'https://i.imgur.com/Vajdkqh.png'
     },
     {
       # speedy - attack 2nd
@@ -209,7 +209,7 @@ horses = Horse.create(
       atk_mod: 12,
       def_mod: 4,
       spd_mod: 1.23,
-      img: 'https://www.b4blaze.in/wp-content/uploads/2016/07/980x-7-1.jpg'
+      img: 'https://i.imgur.com/JHKk789.png'
     },
     {
       # speedy - neutral 2nd
@@ -217,7 +217,7 @@ horses = Horse.create(
       atk_mod: 7,
       def_mod: 2,
       spd_mod: 1.35,
-      img: 'https://i.pinimg.com/originals/e2/c9/34/e2c93450f1d2d814c8e289f1f9c58531.jpg'
+      img: 'https://i.imgur.com/xujlUsG.png'
     },
     {
       # speedy - defense 2nd
@@ -225,7 +225,7 @@ horses = Horse.create(
       atk_mod: -2,
       def_mod: 15,
       spd_mod: 1.3,
-      img: 'https://i.pinimg.com/originals/76/96/f4/7696f4a677f79bf6cdf130d007122c96.jpg'
+      img: 'https://i.imgur.com/p8EgE7w.png'
     },
     {
       # attacking - neutral 2nd
@@ -233,7 +233,7 @@ horses = Horse.create(
       atk_mod: 12,
       def_mod: 5,
       spd_mod: 1,
-      img: 'https://thecooleststuffever.com/sites/default/files/styles/product_main/public/horse_head_squirrel_feeder_0.jpg?itok=Yg3PH_4p'
+      img: 'https://i.imgur.com/ExuOOve.png'
     },
     {
       # defensive - attack 2nd
@@ -241,7 +241,7 @@ horses = Horse.create(
       atk_mod: 8,
       def_mod: 10,
       spd_mod: 1.1,
-      img: 'http://gentlecarouseltherapyhorses.com/wp-content/uploads/2016/10/therapy-horse-misty-read-book-gentle-carousel-hero-horses-646x716.jpg'
+      img: 'https://i.imgur.com/flJb0sf.png'
     }
   ]
 )

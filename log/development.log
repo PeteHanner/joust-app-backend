@@ -313,9 +313,9 @@ Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 164
 
 
 Started GET "/horses" for ::1 at 2019-10-17 15:02:10 -0400
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for HorsesController):
-  
+
 actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
 actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
 actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
@@ -359,9 +359,9 @@ puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 Started GET "/horses" for ::1 at 2019-10-17 15:02:24 -0400
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for HorsesController):
-  
+
 actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
 actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
 actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
@@ -3728,9 +3728,9 @@ Completed 200 OK in 48ms (Views: 30.1ms | ActiveRecord: 10.9ms | Allocations: 78
 
 
 Started GET "/favicon.ico" for ::1 at 2019-10-21 11:33:46 -0400
-  
+
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
-  
+
 actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
 actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
@@ -15267,5 +15267,3 @@ Completed 200 OK in 55ms (Views: 21.9ms | ActiveRecord: 30.6ms | Allocations: 19
 
 
 Completed 200 OK in 62ms (Views: 21.1ms | ActiveRecord: 39.2ms | Allocations: 21366)
-
-
