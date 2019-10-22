@@ -15,73 +15,73 @@ weapons = Weapon.create(
     {
       # decent hit rate, great damage, good defense, quite heavy
       name: 'Lance',
-      atk_mod: 60,
+      atk_mod: 65,
       base_dmg: 30,
-      def_mod: 10,
+      def_mod: -10,
       spd_mod: 0.7,
       img: 'https://i.imgur.com/OKlx5uf.png'
     },
     {
       # good hit rate, low damage, very quick, bad defense
       name: 'Shortsword',
-      atk_mod: 75,
+      atk_mod: 80,
       base_dmg: 10,
-      def_mod: -10,
-      spd_mod: 1.5,
+      def_mod: 2,
+      spd_mod: 1.3,
       img: 'https://i.imgur.com/NTQcstw.png'
     },
     {
       # okay hit rate, good damage, good defense, somewhat heavy
       name: 'Claymore',
-      atk_mod: 70,
+      atk_mod: 68,
       base_dmg: 22,
-      def_mod: 10,
+      def_mod: -3,
       spd_mod: 0.8,
       img: 'https://i.imgur.com/p2ro6Sw.png'
     },
     {
       # great hit rate, okay damage, bad defense, quite light
       name: 'Spear',
-      atk_mod: 80,
+      atk_mod: 75,
       base_dmg: 18,
-      def_mod: -10,
+      def_mod: 2,
       spd_mod: 1.2,
       img: 'https://i.imgur.com/CRRYwk4.png'
     },
     {
       # okay hit rate, good damage, poor defense, somewhat heavy
       name: 'Mace',
-      atk_mod: 70,
+      atk_mod: 72,
       base_dmg: 20,
-      def_mod: -4,
+      def_mod: 0,
       spd_mod: 0.9,
       img: 'https://i.imgur.com/eqnirOC.png'
     },
     {
       # bad hit rate, excellent damage, bad defense, neutral weight
       name: 'Flail',
-      atk_mod: 50,
+      atk_mod: 62,
       base_dmg: 29,
-      def_mod: -12,
+      def_mod: -9,
       spd_mod: 1,
       img: 'https://i.imgur.com/F6yjARG.png'
     },
     {
       # okay hit rate, huge damage, bad defense, very heavy
       name: 'Battle Axe',
-      atk_mod: 66,
+      atk_mod: 64,
       base_dmg: 32,
-      def_mod: -7,
+      def_mod: -11,
       spd_mod: 0.65,
       img: 'https://i.imgur.com/fDsDhTr.png'
     },
     {
       # bad hit rate, extreme damage, terrible defense, extremely heavy
       name: 'Warhammer',
-      atk_mod: 50,
-      base_dmg: 36,
-      def_mod: -16,
-      spd_mod: 0.58,
+      atk_mod: 60,
+      base_dmg: 35,
+      def_mod: -14,
+      spd_mod: 0.62,
       img: 'https://i.imgur.com/FUZLUsG.png'
     },
     {
@@ -89,8 +89,8 @@ weapons = Weapon.create(
       name: 'Poleaxe',
       atk_mod: 72,
       base_dmg: 21,
-      def_mod: 12,
-      spd_mod: 1.1,
+      def_mod: 4,
+      spd_mod: 0.9,
       img: 'https://i.imgur.com/1gCg1ks.png'
     }
   ]
@@ -110,15 +110,15 @@ armors = Armor.create(
     {
       # excellent defense, extremely heavy, specialty against piercing
       name: 'Heavy Plate',
-      base_def: 82,
-      spd_mod: 0.6,
+      base_def: 80,
+      spd_mod: 0.64,
       img: 'https://www.warhistoryonline.com/wp-content/uploads/2016/06/Italian_-_Sallet_-_Walters_51580-403x640.jpg'
     },
     {
       # very good defense, quite heavy, specialty against piercing
       name: 'Standard Plate',
       base_def: 76,
-      spd_mod: 0.75,
+      spd_mod: 0.72,
       img: 'img.com/imgsrc'
     },
     {
@@ -133,20 +133,20 @@ armors = Armor.create(
       name: 'Quilted Padding',
       base_def: 53,
       spd_mod: 1.5,
-      img: 'img.com/imgsrc'
+      img: 'https://live.staticflickr.com/3093/4559379622_825ce591f2_b.jpg'
     },
     {
       # above average defense, mildly heavy, specialty against slashing
       name: 'Scale Plate',
       base_def: 70,
-      spd_mod: 0.92,
+      spd_mod: 0.90,
       img: 'img.com/imgsrc'
     },
     {
       # good defense, somewhat heavy, specialty against slashing
       name: 'Centurion Armor',
       base_def: 74,
-      spd_mod: 0.85,
+      spd_mod: 0.84,
       img: 'img.com/imgsrc'
     },
     {
@@ -159,8 +159,8 @@ armors = Armor.create(
     {
       # atrocious defense, extremely light, no specialties
       name: 'Loincloth',
-      base_def: 10,
-      spd_mod: 1.92,
+      base_def: 25,
+      spd_mod: 1.72,
       img: 'img.com/imgsrc'
     }
   ]
@@ -182,7 +182,7 @@ horses = Horse.create(
     {
       # attacking - speed 2nd
       name: 'Marisa',
-      atk_mod: 14,
+      atk_mod: 13,
       def_mod: 3,
       spd_mod: 1.2,
       img: 'https://cdn.globetrotting.com.au/wp-content/uploads/20190205110841/Curly_reddit-1024x827.jpg'
@@ -190,8 +190,8 @@ horses = Horse.create(
     {
       # defensive - speed 2nd
       name: 'German',
-      atk_mod: 0,
-      def_mod: 16,
+      atk_mod: 2,
+      def_mod: 13,
       spd_mod: 1.25,
       img: 'https://www.horsebreedspictures.com/wp-content/uploads/2018/06/Horse-Mustang.jpg'
     },
@@ -208,13 +208,13 @@ horses = Horse.create(
       name: 'Carlos',
       atk_mod: 12,
       def_mod: 4,
-      spd_mod: 1.33,
+      spd_mod: 1.23,
       img: 'https://www.b4blaze.in/wp-content/uploads/2016/07/980x-7-1.jpg'
     },
     {
       # speedy - neutral 2nd
       name: 'Victor',
-      atk_mod: 4,
+      atk_mod: 7,
       def_mod: 2,
       spd_mod: 1.35,
       img: 'https://i.pinimg.com/originals/e2/c9/34/e2c93450f1d2d814c8e289f1f9c58531.jpg'
@@ -223,7 +223,7 @@ horses = Horse.create(
       # speedy - defense 2nd
       name: 'Rob',
       atk_mod: -2,
-      def_mod: 16,
+      def_mod: 15,
       spd_mod: 1.3,
       img: 'https://i.pinimg.com/originals/76/96/f4/7696f4a677f79bf6cdf130d007122c96.jpg'
     },

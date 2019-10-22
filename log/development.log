@@ -13343,3 +13343,1929 @@ Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 1.4ms | Allocations: 2150)
 Completed 200 OK in 155ms (Views: 5.4ms | ActiveRecord: 148.9ms | Allocations: 7949)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (136.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "joust_app_backend_development"[0m
+  [1m[35m (121.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "joust_app_backend_test"[0m
+  [1m[35m (347.0ms)[0m  [1m[35mCREATE DATABASE "joust_app_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (260.9ms)[0m  [1m[35mCREATE DATABASE "joust_app_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3311046642746224830)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWeapons (20191017125810)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "weapons" ("id" bigserial primary key, "name" character varying, "base_dmg" integer, "atk_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017125810"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateArmors (20191017125913)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "armors" ("id" bigserial primary key, "name" character varying, "base_def" integer, "spd_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017125913"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHorses (20191017130052)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "horses" ("id" bigserial primary key, "name" character varying, "atk_mod" integer, "spd_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017130052"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToWeapons (20191017141136)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "weapons" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141136"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToArmors (20191017141150)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "armors" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141150"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToHorses (20191017141158)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "horses" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141158"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveDefModFromArmors (20191017142309)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "armors" DROP COLUMN "def_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017142309"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameAtkModToSpdMod (20191019134728)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "weapons" RENAME COLUMN "atk_mod" TO "spd_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019134728"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAtkModToWeapons (20191019135225)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "weapons" ADD "atk_mod" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019135225"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeSpeedModifiersToFloats (20191021153124)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mALTER TABLE "armors" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "weapons" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "horses" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191021153124"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-22 13:54:06.204098"], ["updated_at", "2019-10-22 13:54:06.204098"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3311046642746224830)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (1.3ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 30], ["spd_mod", 0.7], ["def_mod", 10], ["created_at", "2019-10-22 13:54:08.089466"], ["updated_at", "2019-10-22 13:54:08.089466"], ["img", "https://i.imgur.com/OKlx5uf.png"], ["atk_mod", 60]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.6ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shortsword"], ["base_dmg", 10], ["spd_mod", 1.5], ["def_mod", -10], ["created_at", "2019-10-22 13:54:08.095938"], ["updated_at", "2019-10-22 13:54:08.095938"], ["img", "https://i.imgur.com/NTQcstw.png"], ["atk_mod", 75]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Claymore"], ["base_dmg", 22], ["spd_mod", 0.8], ["def_mod", 10], ["created_at", "2019-10-22 13:54:08.102557"], ["updated_at", "2019-10-22 13:54:08.102557"], ["img", "https://i.imgur.com/p2ro6Sw.png"], ["atk_mod", 70]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spear"], ["base_dmg", 18], ["spd_mod", 1.2], ["def_mod", -10], ["created_at", "2019-10-22 13:54:08.106370"], ["updated_at", "2019-10-22 13:54:08.106370"], ["img", "https://i.imgur.com/CRRYwk4.png"], ["atk_mod", 80]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.9ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Mace"], ["base_dmg", 20], ["spd_mod", 0.9], ["def_mod", -4], ["created_at", "2019-10-22 13:54:08.110111"], ["updated_at", "2019-10-22 13:54:08.110111"], ["img", "https://i.imgur.com/eqnirOC.png"], ["atk_mod", 70]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.7ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Flail"], ["base_dmg", 29], ["spd_mod", 1.0], ["def_mod", -12], ["created_at", "2019-10-22 13:54:08.117343"], ["updated_at", "2019-10-22 13:54:08.117343"], ["img", "https://i.imgur.com/F6yjARG.png"], ["atk_mod", 50]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.7ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Battle Axe"], ["base_dmg", 32], ["spd_mod", 0.65], ["def_mod", -7], ["created_at", "2019-10-22 13:54:08.127402"], ["updated_at", "2019-10-22 13:54:08.127402"], ["img", "https://i.imgur.com/fDsDhTr.png"], ["atk_mod", 66]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.6ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Warhammer"], ["base_dmg", 36], ["spd_mod", 0.58], ["def_mod", -16], ["created_at", "2019-10-22 13:54:08.134606"], ["updated_at", "2019-10-22 13:54:08.134606"], ["img", "https://i.imgur.com/FUZLUsG.png"], ["atk_mod", 50]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.7ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Poleaxe"], ["base_dmg", 21], ["spd_mod", 1.1], ["def_mod", 12], ["created_at", "2019-10-22 13:54:08.144289"], ["updated_at", "2019-10-22 13:54:08.144289"], ["img", "https://i.imgur.com/1gCg1ks.png"], ["atk_mod", 72]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.7ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 66], ["spd_mod", 1.1], ["created_at", "2019-10-22 13:54:08.168736"], ["updated_at", "2019-10-22 13:54:08.168736"], ["img", "https://www.warhistoryonline.com/wp-content/uploads/2016/06/russian_mail_armor-536x640.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Heavy Plate"], ["base_def", 82], ["spd_mod", 0.6], ["created_at", "2019-10-22 13:54:08.173456"], ["updated_at", "2019-10-22 13:54:08.173456"], ["img", "https://www.warhistoryonline.com/wp-content/uploads/2016/06/Italian_-_Sallet_-_Walters_51580-403x640.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Standard Plate"], ["base_def", 76], ["spd_mod", 0.75], ["created_at", "2019-10-22 13:54:08.177277"], ["updated_at", "2019-10-22 13:54:08.177277"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.3ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Boiled Leather"], ["base_def", 60], ["spd_mod", 1.25], ["created_at", "2019-10-22 13:54:08.181301"], ["updated_at", "2019-10-22 13:54:08.181301"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.7ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Quilted Padding"], ["base_def", 53], ["spd_mod", 1.5], ["created_at", "2019-10-22 13:54:08.185433"], ["updated_at", "2019-10-22 13:54:08.185433"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Scale Plate"], ["base_def", 70], ["spd_mod", 0.92], ["created_at", "2019-10-22 13:54:08.189469"], ["updated_at", "2019-10-22 13:54:08.189469"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Centurion Armor"], ["base_def", 74], ["spd_mod", 0.85], ["created_at", "2019-10-22 13:54:08.193700"], ["updated_at", "2019-10-22 13:54:08.193700"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hoplite Armor"], ["base_def", 76], ["spd_mod", 0.82], ["created_at", "2019-10-22 13:54:08.197881"], ["updated_at", "2019-10-22 13:54:08.197881"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Loincloth"], ["base_def", 10], ["spd_mod", 1.92], ["created_at", "2019-10-22 13:54:08.201700"], ["updated_at", "2019-10-22 13:54:08.201700"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.7ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Peyton"], ["atk_mod", -3], ["spd_mod", 1.15], ["def_mod", 15], ["created_at", "2019-10-22 13:54:08.219838"], ["updated_at", "2019-10-22 13:54:08.219838"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Marisa"], ["atk_mod", 14], ["spd_mod", 1.2], ["def_mod", 3], ["created_at", "2019-10-22 13:54:08.224069"], ["updated_at", "2019-10-22 13:54:08.224069"], ["img", "https://cdn.globetrotting.com.au/wp-content/uploads/20190205110841/Curly_reddit-1024x827.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "German"], ["atk_mod", 0], ["spd_mod", 1.25], ["def_mod", 16], ["created_at", "2019-10-22 13:54:08.228278"], ["updated_at", "2019-10-22 13:54:08.228278"], ["img", "https://www.horsebreedspictures.com/wp-content/uploads/2018/06/Horse-Mustang.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.3ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pete"], ["atk_mod", 14], ["spd_mod", 1.1], ["def_mod", 7], ["created_at", "2019-10-22 13:54:08.232252"], ["updated_at", "2019-10-22 13:54:08.232252"], ["img", "https://c8.alamy.com/comp/X6BT0G/close-up-of-a-horse-wearing-sunglasses-and-baring-its-teeth-X6BT0G.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Carlos"], ["atk_mod", 12], ["spd_mod", 1.33], ["def_mod", 4], ["created_at", "2019-10-22 13:54:08.235914"], ["updated_at", "2019-10-22 13:54:08.235914"], ["img", "https://www.b4blaze.in/wp-content/uploads/2016/07/980x-7-1.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Victor"], ["atk_mod", 4], ["spd_mod", 1.35], ["def_mod", 2], ["created_at", "2019-10-22 13:54:08.240252"], ["updated_at", "2019-10-22 13:54:08.240252"], ["img", "https://i.pinimg.com/originals/e2/c9/34/e2c93450f1d2d814c8e289f1f9c58531.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rob"], ["atk_mod", -2], ["spd_mod", 1.3], ["def_mod", 16], ["created_at", "2019-10-22 13:54:08.243944"], ["updated_at", "2019-10-22 13:54:08.243944"], ["img", "https://i.pinimg.com/originals/76/96/f4/7696f4a677f79bf6cdf130d007122c96.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JC"], ["atk_mod", 12], ["spd_mod", 1.0], ["def_mod", 5], ["created_at", "2019-10-22 13:54:08.247723"], ["updated_at", "2019-10-22 13:54:08.247723"], ["img", "https://thecooleststuffever.com/sites/default/files/styles/product_main/public/horse_head_squirrel_feeder_0.jpg?itok=Yg3PH_4p"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.7ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Shannon"], ["atk_mod", 8], ["spd_mod", 1.1], ["def_mod", 10], ["created_at", "2019-10-22 13:54:08.265304"], ["updated_at", "2019-10-22 13:54:08.265304"], ["img", "http://gentlecarouseltherapyhorses.com/wp-content/uploads/2016/10/therapy-horse-misty-read-book-gentle-carousel-hero-horses-646x716.jpg"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/weapons" for ::1 at 2019-10-22 09:54:19 -0400
+Started GET "/horses" for ::1 at 2019-10-22 09:54:19 -0400
+Started GET "/armors" for ::1 at 2019-10-22 09:54:19 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (4.9ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Processing by WeaponsController#index as */*
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (3.6ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mWeapon Load (1.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 33ms (Views: 19.9ms | ActiveRecord: 11.9ms | Allocations: 9856)
+
+
+Completed 200 OK in 53ms (Views: 19.4ms | ActiveRecord: 32.2ms | Allocations: 18514)
+
+
+Completed 200 OK in 60ms (Views: 19.6ms | ActiveRecord: 38.9ms | Allocations: 21091)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 09:56:20 -0400
+Started GET "/armors" for ::1 at 2019-10-22 09:56:20 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 09:56:20 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (3.4ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (1.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mWeapon Load (3.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 3.4ms | Allocations: 3151)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 3.3ms | Allocations: 5014)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 1.7ms | Allocations: 6433)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 09:56:44 -0400
+Started GET "/armors" for ::1 at 2019-10-22 09:56:44 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 09:56:44 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (3.0ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mHorse Load (1.7ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 3.0ms | Allocations: 3489)
+
+
+  [1m[36mWeapon Load (4.7ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 4.7ms | Allocations: 6248)
+
+
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 1.7ms | Allocations: 4887)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 09:57:14 -0400
+Started GET "/armors" for ::1 at 2019-10-22 09:57:14 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 09:57:14 -0400
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (4.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 5.3ms | ActiveRecord: 4.9ms | Allocations: 2841)
+
+
+  [1m[36mWeapon Load (7.1ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 6.0ms | ActiveRecord: 7.1ms | Allocations: 4360)
+
+
+  [1m[36mHorse Load (13.3ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 5.2ms | ActiveRecord: 13.3ms | Allocations: 6447)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 09:57:49 -0400
+Started GET "/armors" for ::1 at 2019-10-22 09:57:49 -0400
+Processing by HorsesController#index as */*
+Started GET "/weapons" for ::1 at 2019-10-22 09:57:49 -0400
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (3.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (1.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 3.0ms | Allocations: 2872)
+
+
+Processing by WeaponsController#index as */*
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 1.7ms | Allocations: 4922)
+
+
+  [1m[36mWeapon Load (4.7ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 4.7ms | Allocations: 3640)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 09:59:21 -0400
+Started GET "/armors" for ::1 at 2019-10-22 09:59:21 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 09:59:21 -0400
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (3.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Processing by HorsesController#index as */*
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 3.9ms | Allocations: 3378)
+
+
+  [1m[36mWeapon Load (8.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mHorse Load (1.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 8.4ms | Allocations: 4553)
+
+
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.8ms | Allocations: 4470)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:00:00 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:00:00 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:00:00 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (3.3ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mWeapon Load (1.9ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (1.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 3.3ms | Allocations: 3739)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 1.9ms | Allocations: 4859)
+
+
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.7ms | Allocations: 6247)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:01:04 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:01:04 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:01:04 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (2.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mArmor Load (1.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 2.6ms | Allocations: 3547)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.8ms | Allocations: 4877)
+
+
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 1.3ms | Allocations: 6248)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:01:17 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:01:17 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:01:17 -0400
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (1.5ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Processing by ArmorsController#index as */*
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mHorse Load (1.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 1.5ms | Allocations: 3210)
+
+
+  [1m[36mArmor Load (3.5ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 3.5ms | Allocations: 4269)
+
+
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 1.6ms | Allocations: 6372)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:01:51 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:01:51 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:01:51 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (1.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (3.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 1.8ms | Allocations: 3476)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (2.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 3.9ms | Allocations: 4922)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 2.4ms | Allocations: 4429)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:02:06 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:02:06 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:02:06 -0400
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (3.1ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (2.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mHorse Load (2.1ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 3.1ms | Allocations: 3625)
+
+
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 2.8ms | Allocations: 4960)
+
+
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 2.1ms | Allocations: 6181)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:04:51 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:04:51 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:04:51 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (3.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (5.0ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (9.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 9.4ms | Allocations: 3510)
+
+
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 3.0ms | Allocations: 6002)
+
+
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 5.0ms | Allocations: 6276)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:05:24 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:05:24 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:05:24 -0400
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mWeapon Load (1.5ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mHorse Load (1.3ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (6.2ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.5ms | Allocations: 3598)
+
+
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 6.2ms | Allocations: 6050)
+
+
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 1.3ms | Allocations: 4470)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:05:35 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:05:35 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:05:35 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (2.4ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 54ms (Views: 47.4ms | ActiveRecord: 2.4ms | Allocations: 3597)
+
+
+  [1m[36mArmor Load (39.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 57ms (Views: 16.6ms | ActiveRecord: 39.8ms | Allocations: 4257)
+
+
+  [1m[36mWeapon Load (18.0ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 69ms (Views: 12.4ms | ActiveRecord: 18.0ms | Allocations: 6428)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:05:51 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:05:51 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:05:51 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (1.5ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.5ms | Allocations: 2368)
+
+
+  [1m[36mArmor Load (3.0ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Processing by WeaponsController#index as */*
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 3.0ms | Allocations: 4927)
+
+
+  [1m[36mWeapon Load (2.9ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 2.9ms | Allocations: 3636)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:06:42 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:06:42 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:06:42 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (1.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.7ms | Allocations: 2752)
+
+
+  [1m[36mHorse Load (3.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Processing by WeaponsController#index as */*
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 3.6ms | Allocations: 4905)
+
+
+  [1m[36mWeapon Load (2.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 2.4ms | Allocations: 3724)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:06:51 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:06:51 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:06:51 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (1.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.8ms | Allocations: 2842)
+
+
+  [1m[36mWeapon Load (3.6ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mHorse Load (1.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.8ms | Allocations: 4883)
+
+
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 3.6ms | Allocations: 6231)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:07:50 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:07:50 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:07:50 -0400
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (3.2ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mWeapon Load (1.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 3.2ms | Allocations: 3004)
+
+
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.8ms | Allocations: 4194)
+
+
+  [1m[36mHorse Load (2.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 2.0ms | Allocations: 6442)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:08:06 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:08:06 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:08:06 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (1.7ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mWeapon Load (2.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (1.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 1.7ms | Allocations: 5811)
+
+
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 2.3ms | Allocations: 4126)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 1.8ms | Allocations: 6425)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:08:14 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:08:14 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:08:14 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (2.1ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mWeapon Load (1.5ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mArmor Load (2.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.5ms | Allocations: 2881)
+
+
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 2.1ms | Allocations: 5152)
+
+
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 2.8ms | Allocations: 6248)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 10:17:11 -0400
+Started GET "/armors" for ::1 at 2019-10-22 10:17:11 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:17:11 -0400
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mWeapon Load (9.2ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (6.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 69ms (Views: 34.2ms | ActiveRecord: 9.2ms | Allocations: 3650)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 109ms (Views: 101.4ms | ActiveRecord: 6.7ms | Allocations: 4458)
+
+
+Processing by HorsesController#index as */*
+  [1m[36mHorse Load (0.9ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 2169)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 10:45:58 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 10:45:58 -0400
+Started GET "/horses" for ::1 at 2019-10-22 10:45:58 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (6.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mWeapon Load (1.5ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mHorse Load (2.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 82ms (Views: 80.2ms | ActiveRecord: 1.5ms | Allocations: 3550)
+
+
+Completed 200 OK in 122ms (Views: 108.7ms | ActiveRecord: 6.9ms | Allocations: 6703)
+
+
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 117ms (Views: 111.8ms | ActiveRecord: 2.6ms | Allocations: 7035)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 11:37:25 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 11:37:25 -0400
+Started GET "/armors" for ::1 at 2019-10-22 11:37:25 -0400
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (3.9ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Processing by ArmorsController#index as */*
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 3.9ms | Allocations: 3901)
+
+
+  [1m[36mHorse Load (9.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (3.6ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 9.0ms | Allocations: 5295)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 3.6ms | Allocations: 4530)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 11:41:59 -0400
+Started GET "/armors" for ::1 at 2019-10-22 11:41:59 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 11:41:59 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (4.4ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 4.4ms | Allocations: 2911)
+
+
+  [1m[36mWeapon Load (9.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 9.8ms | Allocations: 4256)
+
+
+  [1m[36mHorse Load (10.5ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 23ms (Views: 12.0ms | ActiveRecord: 10.5ms | Allocations: 6544)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 11:48:06 -0400
+Started GET "/armors" for ::1 at 2019-10-22 11:48:06 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 11:48:06 -0400
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (4.6ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 4.6ms | Allocations: 2964)
+
+
+  [1m[36mWeapon Load (12.1ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 48ms (Views: 35.3ms | ActiveRecord: 12.1ms | Allocations: 6203)
+
+
+  [1m[36mHorse Load (40.4ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 48ms (Views: 7.3ms | ActiveRecord: 40.4ms | Allocations: 6743)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 11:55:34 -0400
+Started GET "/armors" for ::1 at 2019-10-22 11:55:34 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 11:55:34 -0400
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (5.0ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mArmor Load (5.5ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 5.5ms | Allocations: 2992)
+
+
+  [1m[36mHorse Load (12.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 5.9ms | ActiveRecord: 12.8ms | Allocations: 6503)
+
+
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 5.0ms | Allocations: 4462)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 12:02:45 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:02:45 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:02:45 -0400
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mWeapon Load (11.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 5.3ms | ActiveRecord: 11.4ms | Allocations: 4002)
+
+
+  [1m[36mHorse Load (11.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 21ms (Views: 8.9ms | ActiveRecord: 11.8ms | Allocations: 5416)
+
+
+  [1m[36mArmor Load (14.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 21ms (Views: 5.7ms | ActiveRecord: 14.9ms | Allocations: 6742)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 12:13:34 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:13:34 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:13:34 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (8.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 8.1ms | Allocations: 3853)
+
+
+  [1m[36mHorse Load (12.2ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 6.4ms | ActiveRecord: 12.2ms | Allocations: 5267)
+
+
+  [1m[36mWeapon Load (13.7ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 4.0ms | ActiveRecord: 13.7ms | Allocations: 6742)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 12:19:28 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:19:28 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:19:28 -0400
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (4.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 4.4ms | Allocations: 2462)
+
+
+  [1m[36mHorse Load (7.3ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mArmor Load (9.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 8.0ms | ActiveRecord: 7.3ms | Allocations: 5153)
+
+
+Completed 200 OK in 20ms (Views: 10.3ms | ActiveRecord: 9.1ms | Allocations: 6653)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 12:21:00 -0400
+Started GET "/horses" for ::1 at 2019-10-22 12:21:00 -0400
+Processing by ArmorsController#index as */*
+Started GET "/weapons" for ::1 at 2019-10-22 12:21:00 -0400
+  [1m[36mArmor Load (1.2ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 1.2ms | Allocations: 2193)
+
+
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (1.4ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 1.4ms | Allocations: 2804)
+
+
+  [1m[36mWeapon Load (3.9ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 3.9ms | Allocations: 4323)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (139.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "joust_app_backend_development"[0m
+  [1m[35m (126.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "joust_app_backend_test"[0m
+  [1m[35m (369.6ms)[0m  [1m[35mCREATE DATABASE "joust_app_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (253.5ms)[0m  [1m[35mCREATE DATABASE "joust_app_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3311046642746224830)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWeapons (20191017125810)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "weapons" ("id" bigserial primary key, "name" character varying, "base_dmg" integer, "atk_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017125810"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateArmors (20191017125913)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "armors" ("id" bigserial primary key, "name" character varying, "base_def" integer, "spd_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017125913"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHorses (20191017130052)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "horses" ("id" bigserial primary key, "name" character varying, "atk_mod" integer, "spd_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017130052"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToWeapons (20191017141136)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "weapons" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141136"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToArmors (20191017141150)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "armors" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141150"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToHorses (20191017141158)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "horses" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141158"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveDefModFromArmors (20191017142309)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "armors" DROP COLUMN "def_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017142309"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameAtkModToSpdMod (20191019134728)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "weapons" RENAME COLUMN "atk_mod" TO "spd_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019134728"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAtkModToWeapons (20191019135225)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "weapons" ADD "atk_mod" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019135225"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeSpeedModifiersToFloats (20191021153124)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "armors" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[35m (4.1ms)[0m  [1m[35mALTER TABLE "weapons" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "horses" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191021153124"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-22 16:31:03.575032"], ["updated_at", "2019-10-22 16:31:03.575032"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3311046642746224830)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (1.1ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 30], ["spd_mod", 0.7], ["def_mod", -10], ["created_at", "2019-10-22 16:31:05.599639"], ["updated_at", "2019-10-22 16:31:05.599639"], ["img", "https://i.imgur.com/OKlx5uf.png"], ["atk_mod", 65]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shortsword"], ["base_dmg", 10], ["spd_mod", 1.3], ["def_mod", 10], ["created_at", "2019-10-22 16:31:05.606777"], ["updated_at", "2019-10-22 16:31:05.606777"], ["img", "https://i.imgur.com/NTQcstw.png"], ["atk_mod", 80]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.6ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Claymore"], ["base_dmg", 22], ["spd_mod", 0.8], ["def_mod", -3], ["created_at", "2019-10-22 16:31:05.613125"], ["updated_at", "2019-10-22 16:31:05.613125"], ["img", "https://i.imgur.com/p2ro6Sw.png"], ["atk_mod", 68]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spear"], ["base_dmg", 18], ["spd_mod", 1.2], ["def_mod", 2], ["created_at", "2019-10-22 16:31:05.618892"], ["updated_at", "2019-10-22 16:31:05.618892"], ["img", "https://i.imgur.com/CRRYwk4.png"], ["atk_mod", 75]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Mace"], ["base_dmg", 20], ["spd_mod", 0.9], ["def_mod", 0], ["created_at", "2019-10-22 16:31:05.625037"], ["updated_at", "2019-10-22 16:31:05.625037"], ["img", "https://i.imgur.com/eqnirOC.png"], ["atk_mod", 72]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Flail"], ["base_dmg", 29], ["spd_mod", 1.0], ["def_mod", -9], ["created_at", "2019-10-22 16:31:05.629215"], ["updated_at", "2019-10-22 16:31:05.629215"], ["img", "https://i.imgur.com/F6yjARG.png"], ["atk_mod", 62]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Battle Axe"], ["base_dmg", 32], ["spd_mod", 0.65], ["def_mod", -11], ["created_at", "2019-10-22 16:31:05.633253"], ["updated_at", "2019-10-22 16:31:05.633253"], ["img", "https://i.imgur.com/fDsDhTr.png"], ["atk_mod", 64]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Warhammer"], ["base_dmg", 35], ["spd_mod", 0.62], ["def_mod", -14], ["created_at", "2019-10-22 16:31:05.637394"], ["updated_at", "2019-10-22 16:31:05.637394"], ["img", "https://i.imgur.com/FUZLUsG.png"], ["atk_mod", 60]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Poleaxe"], ["base_dmg", 21], ["spd_mod", 0.9], ["def_mod", 4], ["created_at", "2019-10-22 16:31:05.641734"], ["updated_at", "2019-10-22 16:31:05.641734"], ["img", "https://i.imgur.com/1gCg1ks.png"], ["atk_mod", 72]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.8ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 66], ["spd_mod", 1.1], ["created_at", "2019-10-22 16:31:05.658491"], ["updated_at", "2019-10-22 16:31:05.658491"], ["img", "https://www.warhistoryonline.com/wp-content/uploads/2016/06/russian_mail_armor-536x640.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Heavy Plate"], ["base_def", 80], ["spd_mod", 0.64], ["created_at", "2019-10-22 16:31:05.663617"], ["updated_at", "2019-10-22 16:31:05.663617"], ["img", "https://www.warhistoryonline.com/wp-content/uploads/2016/06/Italian_-_Sallet_-_Walters_51580-403x640.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Standard Plate"], ["base_def", 76], ["spd_mod", 0.72], ["created_at", "2019-10-22 16:31:05.668275"], ["updated_at", "2019-10-22 16:31:05.668275"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Boiled Leather"], ["base_def", 60], ["spd_mod", 1.25], ["created_at", "2019-10-22 16:31:05.672341"], ["updated_at", "2019-10-22 16:31:05.672341"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Quilted Padding"], ["base_def", 53], ["spd_mod", 1.5], ["created_at", "2019-10-22 16:31:05.676182"], ["updated_at", "2019-10-22 16:31:05.676182"], ["img", "https://live.staticflickr.com/3093/4559379622_825ce591f2_b.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Scale Plate"], ["base_def", 70], ["spd_mod", 0.9], ["created_at", "2019-10-22 16:31:05.680403"], ["updated_at", "2019-10-22 16:31:05.680403"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (1.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Centurion Armor"], ["base_def", 74], ["spd_mod", 0.84], ["created_at", "2019-10-22 16:31:05.685453"], ["updated_at", "2019-10-22 16:31:05.685453"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.7ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hoplite Armor"], ["base_def", 76], ["spd_mod", 0.82], ["created_at", "2019-10-22 16:31:05.693601"], ["updated_at", "2019-10-22 16:31:05.693601"], ["img", "img.com/imgsrc"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Loincloth"], ["base_def", 25], ["spd_mod", 1.72], ["created_at", "2019-10-22 16:31:05.704684"], ["updated_at", "2019-10-22 16:31:05.704684"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.8ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Peyton"], ["atk_mod", -3], ["spd_mod", 1.15], ["def_mod", 15], ["created_at", "2019-10-22 16:31:05.726760"], ["updated_at", "2019-10-22 16:31:05.726760"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Marisa"], ["atk_mod", 13], ["spd_mod", 1.2], ["def_mod", 3], ["created_at", "2019-10-22 16:31:05.733110"], ["updated_at", "2019-10-22 16:31:05.733110"], ["img", "https://cdn.globetrotting.com.au/wp-content/uploads/20190205110841/Curly_reddit-1024x827.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "German"], ["atk_mod", 2], ["spd_mod", 1.25], ["def_mod", 13], ["created_at", "2019-10-22 16:31:05.737592"], ["updated_at", "2019-10-22 16:31:05.737592"], ["img", "https://www.horsebreedspictures.com/wp-content/uploads/2018/06/Horse-Mustang.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pete"], ["atk_mod", 14], ["spd_mod", 1.1], ["def_mod", 7], ["created_at", "2019-10-22 16:31:05.742286"], ["updated_at", "2019-10-22 16:31:05.742286"], ["img", "https://c8.alamy.com/comp/X6BT0G/close-up-of-a-horse-wearing-sunglasses-and-baring-its-teeth-X6BT0G.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Carlos"], ["atk_mod", 12], ["spd_mod", 1.23], ["def_mod", 4], ["created_at", "2019-10-22 16:31:05.746206"], ["updated_at", "2019-10-22 16:31:05.746206"], ["img", "https://www.b4blaze.in/wp-content/uploads/2016/07/980x-7-1.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Victor"], ["atk_mod", 7], ["spd_mod", 1.35], ["def_mod", 2], ["created_at", "2019-10-22 16:31:05.750153"], ["updated_at", "2019-10-22 16:31:05.750153"], ["img", "https://i.pinimg.com/originals/e2/c9/34/e2c93450f1d2d814c8e289f1f9c58531.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.6ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rob"], ["atk_mod", -2], ["spd_mod", 1.3], ["def_mod", 15], ["created_at", "2019-10-22 16:31:05.755392"], ["updated_at", "2019-10-22 16:31:05.755392"], ["img", "https://i.pinimg.com/originals/76/96/f4/7696f4a677f79bf6cdf130d007122c96.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JC"], ["atk_mod", 12], ["spd_mod", 1.0], ["def_mod", 5], ["created_at", "2019-10-22 16:31:05.760670"], ["updated_at", "2019-10-22 16:31:05.760670"], ["img", "https://thecooleststuffever.com/sites/default/files/styles/product_main/public/horse_head_squirrel_feeder_0.jpg?itok=Yg3PH_4p"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Shannon"], ["atk_mod", 8], ["spd_mod", 1.1], ["def_mod", 10], ["created_at", "2019-10-22 16:31:05.765580"], ["updated_at", "2019-10-22 16:31:05.765580"], ["img", "http://gentlecarouseltherapyhorses.com/wp-content/uploads/2016/10/therapy-horse-misty-read-book-gentle-carousel-hero-horses-646x716.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/armors" for ::1 at 2019-10-22 12:31:12 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:31:12 -0400
+Started GET "/horses" for ::1 at 2019-10-22 12:31:12 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArmorsController#index as */*
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (4.4ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (2.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mHorse Load (3.2ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 26ms (Views: 11.3ms | ActiveRecord: 13.2ms | Allocations: 12828)
+
+
+Completed 200 OK in 36ms (Views: 19.5ms | ActiveRecord: 16.0ms | Allocations: 16247)
+
+
+Completed 200 OK in 46ms (Views: 12.7ms | ActiveRecord: 32.4ms | Allocations: 21687)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (136.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "joust_app_backend_development"[0m
+  [1m[35m (129.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "joust_app_backend_test"[0m
+  [1m[35m (325.4ms)[0m  [1m[35mCREATE DATABASE "joust_app_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (262.5ms)[0m  [1m[35mCREATE DATABASE "joust_app_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3311046642746224830)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWeapons (20191017125810)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "weapons" ("id" bigserial primary key, "name" character varying, "base_dmg" integer, "atk_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017125810"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateArmors (20191017125913)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "armors" ("id" bigserial primary key, "name" character varying, "base_def" integer, "spd_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017125913"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHorses (20191017130052)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "horses" ("id" bigserial primary key, "name" character varying, "atk_mod" integer, "spd_mod" integer, "def_mod" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017130052"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToWeapons (20191017141136)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "weapons" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141136"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToArmors (20191017141150)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mALTER TABLE "armors" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141150"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImgToHorses (20191017141158)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "horses" ADD "img" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017141158"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveDefModFromArmors (20191017142309)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "armors" DROP COLUMN "def_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191017142309"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameAtkModToSpdMod (20191019134728)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "weapons" RENAME COLUMN "atk_mod" TO "spd_mod"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019134728"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAtkModToWeapons (20191019135225)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "weapons" ADD "atk_mod" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191019135225"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeSpeedModifiersToFloats (20191021153124)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.1ms)[0m  [1m[35mALTER TABLE "armors" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[35m (7.3ms)[0m  [1m[35mALTER TABLE "weapons" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[35m (9.1ms)[0m  [1m[35mALTER TABLE "horses" ALTER COLUMN "spd_mod" TYPE float[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191021153124"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-22 16:34:27.127765"], ["updated_at", "2019-10-22 16:34:27.127765"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3311046642746224830)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (1.1ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Lance"], ["base_dmg", 30], ["spd_mod", 0.7], ["def_mod", -10], ["created_at", "2019-10-22 16:34:29.149540"], ["updated_at", "2019-10-22 16:34:29.149540"], ["img", "https://i.imgur.com/OKlx5uf.png"], ["atk_mod", 65]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.4ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Shortsword"], ["base_dmg", 10], ["spd_mod", 1.3], ["def_mod", 2], ["created_at", "2019-10-22 16:34:29.155109"], ["updated_at", "2019-10-22 16:34:29.155109"], ["img", "https://i.imgur.com/NTQcstw.png"], ["atk_mod", 80]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Claymore"], ["base_dmg", 22], ["spd_mod", 0.8], ["def_mod", -3], ["created_at", "2019-10-22 16:34:29.160476"], ["updated_at", "2019-10-22 16:34:29.160476"], ["img", "https://i.imgur.com/p2ro6Sw.png"], ["atk_mod", 68]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.6ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Spear"], ["base_dmg", 18], ["spd_mod", 1.2], ["def_mod", 2], ["created_at", "2019-10-22 16:34:29.165027"], ["updated_at", "2019-10-22 16:34:29.165027"], ["img", "https://i.imgur.com/CRRYwk4.png"], ["atk_mod", 75]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Mace"], ["base_dmg", 20], ["spd_mod", 0.9], ["def_mod", 0], ["created_at", "2019-10-22 16:34:29.169707"], ["updated_at", "2019-10-22 16:34:29.169707"], ["img", "https://i.imgur.com/eqnirOC.png"], ["atk_mod", 72]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.6ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Flail"], ["base_dmg", 29], ["spd_mod", 1.0], ["def_mod", -9], ["created_at", "2019-10-22 16:34:29.174756"], ["updated_at", "2019-10-22 16:34:29.174756"], ["img", "https://i.imgur.com/F6yjARG.png"], ["atk_mod", 62]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Battle Axe"], ["base_dmg", 32], ["spd_mod", 0.65], ["def_mod", -11], ["created_at", "2019-10-22 16:34:29.180483"], ["updated_at", "2019-10-22 16:34:29.180483"], ["img", "https://i.imgur.com/fDsDhTr.png"], ["atk_mod", 64]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.6ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Warhammer"], ["base_dmg", 35], ["spd_mod", 0.62], ["def_mod", -14], ["created_at", "2019-10-22 16:34:29.185216"], ["updated_at", "2019-10-22 16:34:29.185216"], ["img", "https://i.imgur.com/FUZLUsG.png"], ["atk_mod", 60]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWeapon Create (0.5ms)[0m  [1m[32mINSERT INTO "weapons" ("name", "base_dmg", "spd_mod", "def_mod", "created_at", "updated_at", "img", "atk_mod") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Poleaxe"], ["base_dmg", 21], ["spd_mod", 0.9], ["def_mod", 4], ["created_at", "2019-10-22 16:34:29.190457"], ["updated_at", "2019-10-22 16:34:29.190457"], ["img", "https://i.imgur.com/1gCg1ks.png"], ["atk_mod", 72]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.9ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Chain Mail"], ["base_def", 66], ["spd_mod", 1.1], ["created_at", "2019-10-22 16:34:29.208580"], ["updated_at", "2019-10-22 16:34:29.208580"], ["img", "https://www.warhistoryonline.com/wp-content/uploads/2016/06/russian_mail_armor-536x640.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Heavy Plate"], ["base_def", 80], ["spd_mod", 0.64], ["created_at", "2019-10-22 16:34:29.214246"], ["updated_at", "2019-10-22 16:34:29.214246"], ["img", "https://www.warhistoryonline.com/wp-content/uploads/2016/06/Italian_-_Sallet_-_Walters_51580-403x640.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Standard Plate"], ["base_def", 76], ["spd_mod", 0.72], ["created_at", "2019-10-22 16:34:29.218762"], ["updated_at", "2019-10-22 16:34:29.218762"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Boiled Leather"], ["base_def", 60], ["spd_mod", 1.25], ["created_at", "2019-10-22 16:34:29.222635"], ["updated_at", "2019-10-22 16:34:29.222635"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Quilted Padding"], ["base_def", 53], ["spd_mod", 1.5], ["created_at", "2019-10-22 16:34:29.226932"], ["updated_at", "2019-10-22 16:34:29.226932"], ["img", "https://live.staticflickr.com/3093/4559379622_825ce591f2_b.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Scale Plate"], ["base_def", 70], ["spd_mod", 0.9], ["created_at", "2019-10-22 16:34:29.231156"], ["updated_at", "2019-10-22 16:34:29.231156"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.5ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Centurion Armor"], ["base_def", 74], ["spd_mod", 0.84], ["created_at", "2019-10-22 16:34:29.235007"], ["updated_at", "2019-10-22 16:34:29.235007"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hoplite Armor"], ["base_def", 76], ["spd_mod", 0.82], ["created_at", "2019-10-22 16:34:29.239318"], ["updated_at", "2019-10-22 16:34:29.239318"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArmor Create (0.4ms)[0m  [1m[32mINSERT INTO "armors" ("name", "base_def", "spd_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Loincloth"], ["base_def", 25], ["spd_mod", 1.72], ["created_at", "2019-10-22 16:34:29.243903"], ["updated_at", "2019-10-22 16:34:29.243903"], ["img", "img.com/imgsrc"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.8ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Peyton"], ["atk_mod", -3], ["spd_mod", 1.15], ["def_mod", 15], ["created_at", "2019-10-22 16:34:29.261750"], ["updated_at", "2019-10-22 16:34:29.261750"], ["img", "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/11/14/shetland-foal-pony.jpg?w968h681"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Marisa"], ["atk_mod", 13], ["spd_mod", 1.2], ["def_mod", 3], ["created_at", "2019-10-22 16:34:29.267028"], ["updated_at", "2019-10-22 16:34:29.267028"], ["img", "https://cdn.globetrotting.com.au/wp-content/uploads/20190205110841/Curly_reddit-1024x827.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "German"], ["atk_mod", 2], ["spd_mod", 1.25], ["def_mod", 13], ["created_at", "2019-10-22 16:34:29.271430"], ["updated_at", "2019-10-22 16:34:29.271430"], ["img", "https://www.horsebreedspictures.com/wp-content/uploads/2018/06/Horse-Mustang.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pete"], ["atk_mod", 14], ["spd_mod", 1.1], ["def_mod", 7], ["created_at", "2019-10-22 16:34:29.275444"], ["updated_at", "2019-10-22 16:34:29.275444"], ["img", "https://c8.alamy.com/comp/X6BT0G/close-up-of-a-horse-wearing-sunglasses-and-baring-its-teeth-X6BT0G.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Carlos"], ["atk_mod", 12], ["spd_mod", 1.23], ["def_mod", 4], ["created_at", "2019-10-22 16:34:29.279436"], ["updated_at", "2019-10-22 16:34:29.279436"], ["img", "https://www.b4blaze.in/wp-content/uploads/2016/07/980x-7-1.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Victor"], ["atk_mod", 7], ["spd_mod", 1.35], ["def_mod", 2], ["created_at", "2019-10-22 16:34:29.283641"], ["updated_at", "2019-10-22 16:34:29.283641"], ["img", "https://i.pinimg.com/originals/e2/c9/34/e2c93450f1d2d814c8e289f1f9c58531.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.4ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rob"], ["atk_mod", -2], ["spd_mod", 1.3], ["def_mod", 15], ["created_at", "2019-10-22 16:34:29.287306"], ["updated_at", "2019-10-22 16:34:29.287306"], ["img", "https://i.pinimg.com/originals/76/96/f4/7696f4a677f79bf6cdf130d007122c96.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (0.6ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "JC"], ["atk_mod", 12], ["spd_mod", 1.0], ["def_mod", 5], ["created_at", "2019-10-22 16:34:29.291156"], ["updated_at", "2019-10-22 16:34:29.291156"], ["img", "https://thecooleststuffever.com/sites/default/files/styles/product_main/public/horse_head_squirrel_feeder_0.jpg?itok=Yg3PH_4p"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHorse Create (3.5ms)[0m  [1m[32mINSERT INTO "horses" ("name", "atk_mod", "spd_mod", "def_mod", "created_at", "updated_at", "img") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Shannon"], ["atk_mod", 8], ["spd_mod", 1.1], ["def_mod", 10], ["created_at", "2019-10-22 16:34:29.298290"], ["updated_at", "2019-10-22 16:34:29.298290"], ["img", "http://gentlecarouseltherapyhorses.com/wp-content/uploads/2016/10/therapy-horse-misty-read-book-gentle-carousel-hero-horses-646x716.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/horses" for ::1 at 2019-10-22 12:35:07 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:35:07 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:35:07 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WeaponsController#index as */*
+  [1m[35m (11.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWeapon Load (6.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (6.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (2.0ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 46ms (Views: 25.3ms | ActiveRecord: 18.9ms | Allocations: 14325)
+
+
+Completed 200 OK in 43ms (Views: 13.9ms | ActiveRecord: 28.2ms | Allocations: 15121)
+
+
+Completed 200 OK in 66ms (Views: 16.8ms | ActiveRecord: 48.2ms | Allocations: 23313)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 12:35:38 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:35:38 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:35:38 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (3.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (4.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 4.1ms | Allocations: 4608)
+
+
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 3.8ms | Allocations: 2963)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 1.3ms | Allocations: 7215)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 12:36:18 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:36:18 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:36:18 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (2.3ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Processing by ArmorsController#index as */*
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 2.3ms | Allocations: 3120)
+
+
+  [1m[36mArmor Load (6.5ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 4.1ms | ActiveRecord: 6.5ms | Allocations: 3574)
+
+
+  [1m[36mWeapon Load (2.0ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 2.0ms | Allocations: 6475)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 12:36:51 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:36:51 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:36:51 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (1.5ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mArmor Load (1.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 1.5ms | Allocations: 2900)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 1.1ms | Allocations: 4691)
+
+
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 1.4ms | Allocations: 6342)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 12:37:26 -0400
+Started GET "/horses" for ::1 at 2019-10-22 12:37:26 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:37:26 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (2.2ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mArmor Load (1.5ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.5ms | Allocations: 2644)
+
+
+Processing by WeaponsController#index as */*
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 2.2ms | Allocations: 5017)
+
+
+  [1m[36mWeapon Load (7.7ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 7.7ms | Allocations: 4319)
+
+
+Started GET "/weapons" for ::1 at 2019-10-22 12:38:26 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:38:26 -0400
+Started GET "/horses" for ::1 at 2019-10-22 12:38:26 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (2.5ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mWeapon Load (1.9ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 2.5ms | Allocations: 3739)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.9ms | Allocations: 4397)
+
+
+  [1m[36mArmor Load (1.6ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 1.6ms | Allocations: 6428)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 12:40:36 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 12:40:36 -0400
+Started GET "/armors" for ::1 at 2019-10-22 12:40:36 -0400
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mWeapon Load (1.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 1.4ms | Allocations: 2997)
+
+
+  [1m[36mArmor Load (3.3ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mHorse Load (4.1ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 3.3ms | Allocations: 4853)
+
+
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 4.1ms | Allocations: 6557)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:09:47 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:09:47 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:09:47 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mWeapon Load (4.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mHorse Load (17.7ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (15.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 38ms (Views: 32.0ms | ActiveRecord: 4.4ms | Allocations: 2986)
+
+
+Completed 200 OK in 57ms (Views: 41.5ms | ActiveRecord: 15.1ms | Allocations: 6560)
+
+
+Completed 200 OK in 62ms (Views: 38.1ms | ActiveRecord: 17.7ms | Allocations: 4574)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:13:59 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:13:59 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:13:59 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (1.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.6ms | Allocations: 2183)
+
+
+  [1m[36mArmor Load (5.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Processing by WeaponsController#index as */*
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 5.8ms | Allocations: 4833)
+
+
+  [1m[36mWeapon Load (1.0ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.0ms | Allocations: 2344)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 14:24:50 -0400
+Started GET "/horses" for ::1 at 2019-10-22 14:24:50 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:24:50 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HorsesController#index as */*
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (18.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (8.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mWeapon Load (3.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mArmor Load (2.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 130ms (Views: 103.5ms | ActiveRecord: 23.7ms | Allocations: 13487)
+
+
+Completed 200 OK in 155ms (Views: 42.2ms | ActiveRecord: 111.1ms | Allocations: 15814)
+
+
+Completed 200 OK in 174ms (Views: 52.9ms | ActiveRecord: 119.7ms | Allocations: 22156)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:26:59 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:26:59 -0400
+Processing by HorsesController#index as */*
+Started GET "/weapons" for ::1 at 2019-10-22 14:26:59 -0400
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (7.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Processing by ArmorsController#index as */*
+Completed 200 OK in 20ms (Views: 11.7ms | ActiveRecord: 7.6ms | Allocations: 3532)
+
+
+  [1m[36mArmor Load (5.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 6.4ms | ActiveRecord: 5.1ms | Allocations: 2175)
+
+
+  [1m[36mWeapon Load (23.9ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 34ms (Views: 9.1ms | ActiveRecord: 23.9ms | Allocations: 7214)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:28:14 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:28:14 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Started GET "/weapons" for ::1 at 2019-10-22 14:28:14 -0400
+  [1m[36mArmor Load (3.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mHorse Load (1.9ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 3.8ms | Allocations: 3085)
+
+
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 1.9ms | Allocations: 4487)
+
+
+Processing by WeaponsController#index as */*
+  [1m[36mWeapon Load (1.1ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.1ms | Allocations: 2150)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:29:09 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:29:09 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (1.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Started GET "/weapons" for ::1 at 2019-10-22 14:29:09 -0400
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mHorse Load (2.5ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.7ms | Allocations: 2426)
+
+
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 2.5ms | Allocations: 4206)
+
+
+Processing by WeaponsController#index as */*
+  [1m[36mWeapon Load (2.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 2.8ms | Allocations: 2150)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:29:39 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:29:39 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (1.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 1.8ms | Allocations: 2373)
+
+
+  [1m[36mArmor Load (7.2ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 48ms (Views: 40.8ms | ActiveRecord: 7.2ms | Allocations: 4309)
+
+
+Started GET "/weapons" for ::1 at 2019-10-22 14:29:39 -0400
+Processing by WeaponsController#index as */*
+  [1m[36mWeapon Load (0.6ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.6ms | Allocations: 2150)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:30:19 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:30:19 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:30:19 -0400
+Processing by HorsesController#index as */*
+  [1m[36mHorse Load (0.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 2315)
+
+
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mWeapon Load (2.2ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 2.2ms | Allocations: 2486)
+
+
+  [1m[36mArmor Load (5.3ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 5.3ms | Allocations: 4253)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:32:33 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:32:33 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:32:33 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (1.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mHorse Load (1.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mWeapon Load (3.2ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.7ms | Allocations: 3429)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 3.2ms | Allocations: 6186)
+
+
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 1.6ms | Allocations: 4284)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 14:34:44 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:34:44 -0400
+Started GET "/horses" for ::1 at 2019-10-22 14:34:44 -0400
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (4.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  [1m[36mWeapon Load (4.1ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 4.1ms | Allocations: 3303)
+
+
+  [1m[36mHorse Load (12.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 4.1ms | Allocations: 5351)
+
+
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 9.2ms | ActiveRecord: 12.0ms | Allocations: 6273)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:35:08 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:35:08 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:35:08 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (1.5ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.2ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.5ms | Allocations: 2390)
+
+
+  [1m[36mHorse Load (4.7ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 1.2ms | Allocations: 4917)
+
+
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 4.7ms | Allocations: 6369)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 14:35:31 -0400
+Started GET "/horses" for ::1 at 2019-10-22 14:35:31 -0400
+Processing by ArmorsController#index as */*
+Started GET "/weapons" for ::1 at 2019-10-22 14:35:31 -0400
+  [1m[36mArmor Load (0.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 2027)
+
+
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (5.0ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 6.2ms | ActiveRecord: 5.0ms | Allocations: 2902)
+
+
+  [1m[36mHorse Load (7.2ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 7.2ms | Allocations: 4340)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:35:54 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:35:54 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:35:54 -0400
+Processing by HorsesController#index as */*
+  [1m[36mHorse Load (1.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.0ms | Allocations: 2729)
+
+
+  [1m[36mWeapon Load (4.2ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 5.3ms | ActiveRecord: 4.2ms | Allocations: 3045)
+
+
+  [1m[36mArmor Load (5.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 5.8ms | Allocations: 4446)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:36:14 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:36:14 -0400
+Processing by ArmorsController#index as */*
+Started GET "/weapons" for ::1 at 2019-10-22 14:36:14 -0400
+Processing by HorsesController#index as */*
+  [1m[36mArmor Load (1.2ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.2ms | Allocations: 2741)
+
+
+  [1m[36mHorse Load (3.5ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Processing by WeaponsController#index as */*
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 3.5ms | Allocations: 4818)
+
+
+  [1m[36mWeapon Load (0.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.8ms | Allocations: 2344)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:42:04 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:42:04 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:42:04 -0400
+Processing by WeaponsController#index as */*
+  [1m[36mWeapon Load (4.2ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Processing by HorsesController#index as */*
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Processing by ArmorsController#index as */*
+Completed 200 OK in 67ms (Views: 61.5ms | ActiveRecord: 4.2ms | Allocations: 6010)
+
+
+  [1m[36mArmor Load (2.6ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 2.6ms | Allocations: 2378)
+
+
+  [1m[36mHorse Load (7.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 55ms (Views: 45.2ms | ActiveRecord: 7.6ms | Allocations: 4566)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 14:42:43 -0400
+Started GET "/horses" for ::1 at 2019-10-22 14:42:43 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:42:43 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (2.3ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mHorse Load (2.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 2.0ms | Allocations: 4691)
+
+
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 2.3ms | Allocations: 2861)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 1.4ms | Allocations: 6391)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:43:30 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:43:30 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:43:30 -0400
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (2.4ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Processing by HorsesController#index as */*
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (2.6ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 2.4ms | Allocations: 3486)
+
+
+  [1m[36mHorse Load (4.3ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 2.6ms | Allocations: 5258)
+
+
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 4.3ms | Allocations: 5652)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:45:22 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:45:22 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (1.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.8ms | Allocations: 2849)
+
+
+  [1m[36mArmor Load (6.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Started GET "/weapons" for ::1 at 2019-10-22 14:45:22 -0400
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 6.8ms | Allocations: 4494)
+
+
+Processing by WeaponsController#index as */*
+  [1m[36mWeapon Load (0.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.8ms | Allocations: 2150)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:45:58 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:45:58 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:45:58 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (2.1ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mArmor Load (3.7ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.7ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 2.1ms | Allocations: 3449)
+
+
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 3.7ms | Allocations: 4856)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 1.7ms | Allocations: 6381)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:47:43 -0400
+Processing by HorsesController#index as */*
+Started GET "/armors" for ::1 at 2019-10-22 14:47:43 -0400
+  [1m[36mHorse Load (3.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 3.0ms | Allocations: 2396)
+
+
+Started GET "/weapons" for ::1 at 2019-10-22 14:47:43 -0400
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (2.0ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.0ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 2.0ms | Allocations: 2765)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.0ms | Allocations: 4208)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:48:09 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:48:09 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:48:09 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (2.8ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 2.8ms | Allocations: 2433)
+
+
+  [1m[36mWeapon Load (5.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (6.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 5.8ms | Allocations: 4952)
+
+
+Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 6.9ms | Allocations: 6352)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:49:14 -0400
+Processing by HorsesController#index as */*
+Started GET "/armors" for ::1 at 2019-10-22 14:49:14 -0400
+  [1m[36mHorse Load (2.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 2.0ms | Allocations: 2530)
+
+
+Started GET "/weapons" for ::1 at 2019-10-22 14:49:14 -0400
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (2.8ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mWeapon Load (1.5ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 2.8ms | Allocations: 2742)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 1.5ms | Allocations: 4254)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:51:55 -0400
+Processing by HorsesController#index as */*
+  [1m[36mHorse Load (79.6ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 85ms (Views: 5.1ms | ActiveRecord: 79.6ms | Allocations: 2304)
+
+
+Started GET "/weapons" for ::1 at 2019-10-22 14:51:55 -0400
+Processing by WeaponsController#index as */*
+Started GET "/armors" for ::1 at 2019-10-22 14:51:55 -0400
+  [1m[36mWeapon Load (1.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 1.3ms | Allocations: 2172)
+
+
+Processing by ArmorsController#index as */*
+  [1m[36mArmor Load (1.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 1.1ms | Allocations: 1981)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:53:28 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:53:28 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:53:28 -0400
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (2.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mArmor Load (1.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 2.4ms | Allocations: 3013)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  [1m[36mHorse Load (4.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 1.1ms | Allocations: 4331)
+
+
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 4.0ms | Allocations: 6397)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 14:55:43 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 14:55:43 -0400
+Started GET "/armors" for ::1 at 2019-10-22 14:55:43 -0400
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+  [1m[36mHorse Load (2.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mWeapon Load (1.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (2.0ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 2.0ms | Allocations: 6056)
+
+
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 2.0ms | Allocations: 4962)
+
+
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 1.3ms | Allocations: 3480)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 15:01:09 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 15:01:09 -0400
+Started GET "/armors" for ::1 at 2019-10-22 15:01:09 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (2.7ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mWeapon Load (2.8ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (2.6ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 2.7ms | Allocations: 2413)
+
+
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 2.8ms | Allocations: 5157)
+
+
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 2.6ms | Allocations: 6735)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 15:07:35 -0400
+Started GET "/armors" for ::1 at 2019-10-22 15:07:35 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 15:07:35 -0400
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (7.3ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 8.2ms | ActiveRecord: 7.3ms | Allocations: 3833)
+
+
+  [1m[36mHorse Load (13.1ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 21ms (Views: 7.5ms | ActiveRecord: 13.1ms | Allocations: 5247)
+
+
+  [1m[36mWeapon Load (17.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 6.6ms | ActiveRecord: 17.4ms | Allocations: 6744)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 15:17:44 -0400
+Started GET "/armors" for ::1 at 2019-10-22 15:17:44 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 15:17:44 -0400
+Processing by ArmorsController#index as */*
+  [1m[36mArmor Load (7.6ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 38ms (Views: 17.6ms | ActiveRecord: 7.6ms | Allocations: 2976)
+
+
+Processing by WeaponsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (9.7ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 15.4ms | ActiveRecord: 9.7ms | Allocations: 2545)
+
+
+  [1m[36mHorse Load (13.9ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 4.9ms | ActiveRecord: 13.9ms | Allocations: 4520)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 15:18:05 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 15:18:05 -0400
+Started GET "/armors" for ::1 at 2019-10-22 15:18:05 -0400
+Processing by WeaponsController#index as */*
+Processing by ArmorsController#index as */*
+Processing by HorsesController#index as */*
+  [1m[36mWeapon Load (5.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 6.1ms | ActiveRecord: 5.3ms | Allocations: 3657)
+
+
+  [1m[36mHorse Load (7.3ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  [1m[36mArmor Load (12.0ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 17ms (Views: 9.1ms | ActiveRecord: 7.3ms | Allocations: 5536)
+
+
+Completed 200 OK in 24ms (Views: 12.0ms | ActiveRecord: 12.0ms | Allocations: 7198)
+
+
+Started GET "/horses" for ::1 at 2019-10-22 15:19:30 -0400
+Started GET "/armors" for ::1 at 2019-10-22 15:19:30 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 15:19:30 -0400
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mHorse Load (3.7ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 3.7ms | Allocations: 3579)
+
+
+  [1m[36mWeapon Load (3.3ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  [1m[36mArmor Load (5.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 3.3ms | Allocations: 4935)
+
+
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 5.1ms | Allocations: 7003)
+
+
+Started GET "/armors" for ::1 at 2019-10-22 15:20:19 -0400
+Started GET "/horses" for ::1 at 2019-10-22 15:20:19 -0400
+Started GET "/weapons" for ::1 at 2019-10-22 15:20:19 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WeaponsController#index as */*
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWeapon Load (3.4ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+Processing by HorsesController#index as */*
+Processing by ArmorsController#index as */*
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+  [1m[36mHorse Load (2.4ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+  [1m[36mArmor Load (4.1ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 33ms (Views: 18.0ms | ActiveRecord: 13.5ms | Allocations: 9945)
+
+
+Completed 200 OK in 55ms (Views: 21.9ms | ActiveRecord: 30.6ms | Allocations: 19818)
+
+
+Completed 200 OK in 62ms (Views: 21.1ms | ActiveRecord: 39.2ms | Allocations: 21366)
+
+
