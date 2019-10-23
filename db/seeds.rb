@@ -44,7 +44,7 @@ weapons = Weapon.create(
       name: 'Spear',
       atk_mod: 75,
       base_dmg: 18,
-      def_mod: -4,
+      def_mod: -2,
       spd_mod: 1.2,
       img: 'https://i.imgur.com/CRRYwk4.png'
     },
@@ -53,7 +53,7 @@ weapons = Weapon.create(
       name: 'Mace',
       atk_mod: 72,
       base_dmg: 20,
-      def_mod: -9,
+      def_mod: -7,
       spd_mod: 0.9,
       img: 'https://i.imgur.com/eqnirOC.png'
     },
@@ -62,7 +62,7 @@ weapons = Weapon.create(
       name: 'Flail',
       atk_mod: 62,
       base_dmg: 29,
-      def_mod: -14,
+      def_mod: -12,
       spd_mod: 1,
       img: 'https://i.imgur.com/F6yjARG.png'
     },
@@ -71,7 +71,7 @@ weapons = Weapon.create(
       name: 'Battle Axe',
       atk_mod: 60,
       base_dmg: 32,
-      def_mod: -11,
+      def_mod: -13,
       spd_mod: 0.65,
       img: 'https://i.imgur.com/fDsDhTr.png'
     },

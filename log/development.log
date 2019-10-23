@@ -23741,3 +23741,24 @@ Completed 200 OK in 59ms (Views: 12.8ms | ActiveRecord: 45.5ms | Allocations: 15
 Completed 200 OK in 85ms (Views: 24.9ms | ActiveRecord: 58.9ms | Allocations: 22460)
 
 
+Started GET "/horses" for ::1 at 2019-10-23 13:02:05 -0400
+Started GET "/weapons" for ::1 at 2019-10-23 13:02:05 -0400
+Started GET "/armors" for ::1 at 2019-10-23 13:02:05 -0400
+Processing by HorsesController#index as */*
+  [1m[36mHorse Load (1.0ms)[0m  [1m[34mSELECT "horses".* FROM "horses"[0m
+  ↳ app/controllers/horses_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 1.0ms | Allocations: 2067)
+
+
+Processing by ArmorsController#index as */*
+Processing by WeaponsController#index as */*
+  [1m[36mArmor Load (10.9ms)[0m  [1m[34mSELECT "armors".* FROM "armors"[0m
+  ↳ app/controllers/armors_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 3.7ms | ActiveRecord: 10.9ms | Allocations: 2746)
+
+
+  [1m[36mWeapon Load (16.9ms)[0m  [1m[34mSELECT "weapons".* FROM "weapons"[0m
+  ↳ app/controllers/weapons_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 3.7ms | ActiveRecord: 16.9ms | Allocations: 4266)
+
+
