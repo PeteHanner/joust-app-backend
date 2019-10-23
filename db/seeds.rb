@@ -26,7 +26,7 @@ weapons = Weapon.create(
       name: 'Shortsword',
       atk_mod: 80,
       base_dmg: 10,
-      def_mod: 2,
+      def_mod: 0,
       spd_mod: 1.3,
       img: 'https://i.imgur.com/NTQcstw.png'
     },
@@ -44,7 +44,7 @@ weapons = Weapon.create(
       name: 'Spear',
       atk_mod: 75,
       base_dmg: 18,
-      def_mod: 2,
+      def_mod: -4,
       spd_mod: 1.2,
       img: 'https://i.imgur.com/CRRYwk4.png'
     },
@@ -53,7 +53,7 @@ weapons = Weapon.create(
       name: 'Mace',
       atk_mod: 72,
       base_dmg: 20,
-      def_mod: 0,
+      def_mod: -9,
       spd_mod: 0.9,
       img: 'https://i.imgur.com/eqnirOC.png'
     },
@@ -62,14 +62,14 @@ weapons = Weapon.create(
       name: 'Flail',
       atk_mod: 62,
       base_dmg: 29,
-      def_mod: -9,
+      def_mod: -14,
       spd_mod: 1,
       img: 'https://i.imgur.com/F6yjARG.png'
     },
     {
       # okay hit rate, huge damage, bad defense, very heavy
       name: 'Battle Axe',
-      atk_mod: 64,
+      atk_mod: 60,
       base_dmg: 32,
       def_mod: -11,
       spd_mod: 0.65,
@@ -78,9 +78,9 @@ weapons = Weapon.create(
     {
       # bad hit rate, extreme damage, terrible defense, extremely heavy
       name: 'Warhammer',
-      atk_mod: 60,
+      atk_mod: 56,
       base_dmg: 35,
-      def_mod: -14,
+      def_mod: -18,
       spd_mod: 0.62,
       img: 'https://i.imgur.com/FUZLUsG.png'
     },
@@ -89,7 +89,7 @@ weapons = Weapon.create(
       name: 'Poleaxe',
       atk_mod: 72,
       base_dmg: 21,
-      def_mod: 4,
+      def_mod: 3,
       spd_mod: 0.9,
       img: 'https://i.imgur.com/1gCg1ks.png'
     }
@@ -111,7 +111,7 @@ armors = Armor.create(
       # excellent defense, extremely heavy, specialty against piercing
       name: 'Heavy Plate',
       base_def: 80,
-      spd_mod: 0.64,
+      spd_mod: 0.6,
       img: 'https://i.imgur.com/nJzICGV.png'
     },
     {
@@ -174,8 +174,8 @@ horses = Horse.create(
     {
       # defensive - neutral 2nd
       name: 'Peyton',
-      atk_mod: -3,
-      def_mod: 15,
+      atk_mod: 0,
+      def_mod: 14,
       spd_mod: 1.15,
       img: 'https://i.imgur.com/I3iX8bX.png'
     },
@@ -191,8 +191,8 @@ horses = Horse.create(
       # defensive - speed 2nd
       name: 'German',
       atk_mod: 2,
-      def_mod: 13,
-      spd_mod: 1.25,
+      def_mod: 11,
+      spd_mod: 1.28,
       img: 'https://i.imgur.com/o6j42e6.png'
     },
     {
@@ -222,9 +222,9 @@ horses = Horse.create(
     {
       # speedy - defense 2nd
       name: 'Rob',
-      atk_mod: -2,
-      def_mod: 15,
-      spd_mod: 1.3,
+      atk_mod: 0,
+      def_mod: 9,
+      spd_mod: 1.35,
       img: 'https://i.imgur.com/p8EgE7w.png'
     },
     {
